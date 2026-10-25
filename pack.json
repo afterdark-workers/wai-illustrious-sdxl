@@ -1,0 +1,162 @@
+{
+  "format": "pack/1",
+  "engine": "comfyui",
+  "kind": "Text To Image",
+  "id": "wai-illustrious-sdxl",
+  "label": "WAI-illustrious-SDXL",
+  "note": "25 steps, CFG 6, Euler a (the creator's settings). Danbooru-style tags work best; start with «masterpiece, best quality, amazing quality,». Rating tags: general · sensitive · nsfw · explicit.",
+  "sizes": [
+    [
+      1024,
+      1344,
+      "Portrait 3:4"
+    ],
+    [
+      1344,
+      1024,
+      "Landscape 4:3"
+    ],
+    [
+      1024,
+      1024,
+      "Square"
+    ],
+    [
+      832,
+      1216,
+      "Portrait 2:3"
+    ],
+    [
+      1216,
+      832,
+      "Landscape 3:2"
+    ]
+  ],
+  "size_step": 64,
+  "workflow": {
+    "4": {
+      "class_type": "CheckpointLoaderSimple",
+      "inputs": {
+        "ckpt_name": "wai_illustrious_sdxl_v17.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1024,
+        "height": 1344,
+        "batch_size": 1
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "10",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "10",
+          0
+        ],
+        "text": "bad quality, worst quality, worst detail, sketch, censor"
+      }
+    },
+    "3": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "5",
+          0
+        ],
+        "seed": 0,
+        "steps": 25,
+        "cfg": 6.0,
+        "sampler_name": "euler_ancestral",
+        "scheduler": "normal",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "4",
+          2
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "wai"
+      }
+    },
+    "10": {
+      "class_type": "CLIPSetLastLayer",
+      "inputs": {
+        "clip": [
+          "4",
+          1
+        ],
+        "stop_at_clip_layer": -2
+      }
+    }
+  },
+  "prompt": [
+    [
+      "6",
+      "text"
+    ]
+  ],
+  "negative": [
+    [
+      "7",
+      "text"
+    ]
+  ],
+  "seed": [
+    [
+      "3",
+      "seed"
+    ]
+  ],
+  "width": [
+    [
+      "5",
+      "width"
+    ]
+  ],
+  "height": [
+    [
+      "5",
+      "height"
+    ]
+  ]
+}
