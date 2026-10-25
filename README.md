@@ -1,6 +1,6 @@
 # WAI-illustrious-SDXL — RunPod Serverless worker
 
-A ready-to-build [RunPod Serverless](https://runpod.io?ref=qpguwapm) worker for **WAI-illustrious-SDXL** by WAI0731, an anime SDXL checkpoint (Illustrious). Based on the official [`runpod/worker-comfyui`](https://github.com/runpod-workers/worker-comfyui).
+A ready-to-build [RunPod Serverless](https://runpod.io?ref=qpguwapm) worker for **[WAI-illustrious-SDXL](https://civitai.com/models/827184?modelVersionId=2883731)** by WAI0731, an anime SDXL checkpoint (Illustrious). Based on the official [`runpod/worker-comfyui`](https://github.com/runpod-workers/worker-comfyui).
 
 Models are baked into the image, so a cold start does not re-download anything.
 
@@ -10,7 +10,7 @@ Models are baked into the image, so a cold start does not re-download anything.
 
 | File | Source | Size |
 |---|---|---|
-| `checkpoints/wai_illustrious_sdxl_v17.safetensors` | Civitai 827184 / version 2883731 (fp16 pruned) | 6.8 GB |
+| `checkpoints/wai_illustrious_sdxl_v17.safetensors` | [Civitai 827184 / version 2883731](https://civitai.com/models/827184?modelVersionId=2883731) (fp16 pruned) | 6.8 GB |
 
 Just the model as its creator released it — no LoRAs, no extra nodes, no upscalers. The VAE is built into the checkpoint. The file is checked by SHA-256 at build time. SDXL runs on the ComfyUI of the base image, so nothing else is installed.
 
