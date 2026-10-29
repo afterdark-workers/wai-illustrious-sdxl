@@ -2,7 +2,7 @@
 
 > 🔞 **Adult (18+) · NSFW** — part of afterdark-workers, workers for uncensored adult image and video models.
 
-A ready-to-build [RunPod Serverless](https://runpod.io?ref=qpguwapm) worker for **[WAI-illustrious-SDXL](https://civitai.com/models/827184?modelVersionId=2883731)** by WAI0731, an anime SDXL checkpoint (Illustrious). Based on the official [`runpod/worker-comfyui`](https://github.com/runpod-workers/worker-comfyui).
+A ready-to-build [RunPod Serverless](https://runpod.io?ref=qpguwapm) worker for **[WAI-illustrious-SDXL](https://civitai.com/models/827184?modelVersionId=2883731)** by [WAI0731](https://civitai.com/user/WAI0731), an anime SDXL checkpoint (Illustrious). Based on the official [`runpod/worker-comfyui`](https://github.com/runpod-workers/worker-comfyui).
 
 Models are baked into the image, so a cold start does not re-download anything.
 
